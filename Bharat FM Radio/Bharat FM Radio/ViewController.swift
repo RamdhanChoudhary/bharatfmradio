@@ -12,7 +12,7 @@ import AVKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var fmListTableView: UITableView!
-    var fmListArry:[String] = ["Bhart FM Radio", "Vividh Bharti", "All India Radio" ]
+    var fmListArry:[String] = ["Bharat FM Radio", "Vividh Bharti", "All India Radio","FM Rainbow","FM Gold", "AIR Punjabi"  ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
