@@ -13,6 +13,7 @@
 		602E5BB922FED96B00648B80 /* Bharat_FM_Radio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 602E5BB722FED96B00648B80 /* Bharat_FM_Radio.xcdatamodeld */; };
 		602E5BBB22FED97400648B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602E5BBA22FED97400648B80 /* Assets.xcassets */; };
 		602E5BBE22FED97400648B80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602E5BBC22FED97400648B80 /* LaunchScreen.storyboard */; };
+		60AF322622FEF213000DB452 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF322522FEF213000DB452 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		602E5BBA22FED97400648B80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		602E5BBD22FED97400648B80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		602E5BBF22FED97400648B80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60AF322522FEF213000DB452 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				602E5BB022FED96B00648B80 /* AppDelegate.swift */,
 				602E5BB222FED96B00648B80 /* ViewController.swift */,
+				60AF322522FEF213000DB452 /* PlayerViewController.swift */,
 				602E5BB422FED96B00648B80 /* Main.storyboard */,
 				602E5BBA22FED97400648B80 /* Assets.xcassets */,
 				602E5BBC22FED97400648B80 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				602E5BB922FED96B00648B80 /* Bharat_FM_Radio.xcdatamodeld in Sources */,
+				60AF322622FEF213000DB452 /* PlayerViewController.swift in Sources */,
 				602E5BB322FED96B00648B80 /* ViewController.swift in Sources */,
 				602E5BB122FED96B00648B80 /* AppDelegate.swift in Sources */,
 			);
