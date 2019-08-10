@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,8 +16,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         transparentNavigationBar()
+       
+        
     }
     
     func transparentNavigationBar()
@@ -26,6 +28,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
     }
+    
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fmListArry.count
@@ -47,13 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Play FM Radio")
         performSegue(withIdentifier: "showPlayerViewController", sender: self)
     }
-    
-    
-    
-
-    
 }
 
