@@ -76,12 +76,46 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgaround_black_apple" translatesAutoresizingMaskIntoConstraints="NO" id="Zx9-tY-rQ4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exe-GB-UON">
+                                <rect key="frame" x="20" y="327" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LsM-2E-cvC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startFMPlayer:" destination="xRc-yW-4N0" eventType="touchUpInside" id="017-HN-p97"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NG-Im-7kB">
+                                <rect key="frame" x="20" y="432" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rBA-sY-JAT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseFMPlayer:" destination="xRc-yW-4N0" eventType="touchUpInside" id="mJC-f2-7mW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XiT-bQ-15q" firstAttribute="trailing" secondItem="Exe-GB-UON" secondAttribute="trailing" constant="20" id="1DW-Z8-2e0"/>
                             <constraint firstItem="Zx9-tY-rQ4" firstAttribute="leading" secondItem="0bA-mv-BnT" secondAttribute="leading" id="2hD-k0-VNl"/>
+                            <constraint firstItem="2NG-Im-7kB" firstAttribute="top" secondItem="Exe-GB-UON" secondAttribute="bottom" constant="55" id="6aB-NF-aKx"/>
                             <constraint firstItem="Zx9-tY-rQ4" firstAttribute="top" secondItem="0bA-mv-BnT" secondAttribute="top" id="97E-WU-Itj"/>
                             <constraint firstAttribute="bottom" secondItem="Zx9-tY-rQ4" secondAttribute="bottom" id="CLp-Wt-Ge6"/>
+                            <constraint firstItem="2NG-Im-7kB" firstAttribute="leading" secondItem="XiT-bQ-15q" secondAttribute="leading" constant="20" id="IIG-hX-dyX"/>
+                            <constraint firstItem="XiT-bQ-15q" firstAttribute="trailing" secondItem="2NG-Im-7kB" secondAttribute="trailing" constant="20" id="IZD-IM-sZU"/>
+                            <constraint firstItem="Exe-GB-UON" firstAttribute="top" secondItem="XiT-bQ-15q" secondAttribute="top" constant="239" id="Srt-bY-jge"/>
+                            <constraint firstItem="Exe-GB-UON" firstAttribute="leading" secondItem="XiT-bQ-15q" secondAttribute="leading" constant="20" id="Z1h-Cu-iFs"/>
                             <constraint firstAttribute="trailing" secondItem="Zx9-tY-rQ4" secondAttribute="trailing" id="qES-87-1Ar"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XiT-bQ-15q"/>
