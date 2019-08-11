@@ -31,6 +31,10 @@ class PlayerViewController: UIViewController {
         addGiffyImage()
         customizeRemoteControls()
         startFirstTimePlayer()
+        
+        let volumeView = MPVolumeView(frame: .zero)
+        volumeView.clipsToBounds = true
+        view.addSubview(volumeView)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -52,6 +56,8 @@ class PlayerViewController: UIViewController {
         
         Timer.scheduledTimer(timeInterval: 12.0, target: self, selector: #selector(PlayerViewController.labelAnimation), userInfo: nil, repeats: true)
         nowPlayingLabel.text = liveStationName + " Live Streaming Online"
+        
+        
     }
     
     @objc func labelAnimation()
