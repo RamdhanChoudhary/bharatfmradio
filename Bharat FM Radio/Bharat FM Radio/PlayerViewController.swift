@@ -33,7 +33,17 @@ class PlayerViewController: UIViewController {
         startFirstTimePlayer()
     }
     
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        //remove plyer when user go back
+        if player != nil
+        {
+            player.pause()
+            player = nil
+        }
+        
+    }
 
     
     func customizeNavigatonBar()
@@ -84,16 +94,9 @@ class PlayerViewController: UIViewController {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        if player != nil {
-            player.pause()
-            player = nil
-            print("player closed.")
-            
-        }
-        
-    }
+    
+    
+    
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
         if let navController = self.navigationController{
@@ -111,11 +114,18 @@ class PlayerViewController: UIViewController {
         
         if self.playButton.isSelected != true//Play
         {
-                player = AVPlayer(url: URL(string: liveStreamURL)!)
-                player.rate = 1.0
-                player.volume = 0.22
-                player.play()
-                print("player started..")
+            
+            if player != nil
+            {
+                player.pause()
+                player = nil
+            }
+            
+            player = AVPlayer(url: URL(string: liveStreamURL)!)
+            player.rate = 1.0
+            player.volume = 0.22
+            player.play()
+            print("player started..")
         }
         else //Stop
         {
