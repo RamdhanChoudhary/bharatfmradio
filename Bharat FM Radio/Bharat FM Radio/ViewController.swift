@@ -14,11 +14,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var fmListTableView: UITableView!
     var fmListArry: [[String:String]] = []
     var selectedLiveStreamURL = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
+    var selectedStationName = "Test"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavigationBar()
         
+        //http://prasarbharati.gov.in/liveradio.php
         let bfrObj0 = ["Name": "AIR Live News 24x7", "URL":"http://esdcdn2-lh.akamaihd.net/i/esdcdn2_1@528073/master.m3u8"]
         let bfrObj1 = ["Name": "Vividh Bharati", "URL": "http://vividhbharati-lh.akamaihd.net/i/vividhbharati_1@507811/master.m3u8"]
         let bfrObj2 = ["Name": "FM Gold Delhi", "URL": "http://airfmgold-lh.akamaihd.net/i/fmgold_1@507591/master.m3u8"]
@@ -47,7 +50,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let bfrObj25 = ["Name": "Vividh Bharati Bengaluru", "URL": "http://nondelhi-lh.akamaihd.net/i/vbsbeng_1@812379/master.m3u8"]
         let bfrObj26 = ["Name": "Rainbow Kannada Kaamanbilu", "URL": "http://nondelhi-lh.akamaihd.net/i/rainbeng_1@812381/master.m3u8"]
         let bfrObj27 = ["Name": " Urdu Service", "URL": "http://airurdu-lh.akamaihd.net/i/airurdu_1@507813/master.m3u8"]
-        
         let bfrObj28 = ["Name": " AIR Bengaluru", "URL": "http://nondelhi-lh.akamaihd.net/i/airbeng_1@813585/master.m3u8"]
         let bfrObj29 = ["Name": " Sun City FM Jodhpur", "URL": "http://nondelhi-lh.akamaihd.net/i/airjodhfm_1@813590/master.m3u8"]
         let bfrObj30 = ["Name": " AIR Pune", "URL": "http://nondelhi-lh.akamaihd.net/i/airpune_1@825822/master.m3u8"]
@@ -76,8 +78,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let bfrObj53 = ["Name": " AIR Kota", "URL": "http://nondelhi-lh.akamaihd.net/i/airlsmp007_1@838091/master.m3u8"]
         let bfrObj54 = ["Name": " AIR Madurai", "URL": "http://nondelhi-lh.akamaihd.net/i/airlsmp008_1@838092/master.m3u8"]
         let bfrObj55 = ["Name": " AIR Kolhapur", "URL": "http://nondelhi-lh.akamaihd-staging.net/i/kolhapur_1@832727/master.m3u8"]
-       
-        
         let bfrObj56 = ["Name": " AIR Suratgarh", "URL": "http://nondelhi-lh.akamaihd.net/i/airlsmp009_1@838093/master.m3u8"]
         let bfrObj57 = ["Name": " Visakhapatnam FM Rainbow", "URL": "http://airlsmp-lh.akamaihd.net/i/AIRLSMP011_1@99841/master.m3u8"]
         let bfrObj58 = ["Name": " AIR Visakhapatnam", "URL": "http://airlsmp-lh.akamaihd.net/i/AIRLSMP012_1@28711/master.m3u8"]
@@ -130,6 +130,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        
+        self.title = "All India Radios"
     }
     
     
@@ -161,6 +163,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dictObj = self.fmListArry[indexPath.row]
         selectedLiveStreamURL = dictObj["URL"]!
+        selectedStationName = dictObj["Name"]!
         
         performSegue(withIdentifier: "showPlayerViewController", sender: self)
     }
@@ -170,6 +173,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if (segue.identifier == "showPlayerViewController") {
             let controller = segue.destination as? PlayerViewController
             controller?.liveStreamURL = selectedLiveStreamURL
+            controller?.liveStationName = selectedStationName
         }
     }
 }

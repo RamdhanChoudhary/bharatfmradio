@@ -11,17 +11,16 @@ import AVFoundation
 import MediaPlayer
 
 class PlayerViewController: UIViewController {
+    
+    var liveStreamURL = "http://listen.shoutcast.com/radiodeltalebanon"
+    var liveStationName = "Test"
 
-    //let urlFile = URL(string:"http://player.absoluteradio.co.uk/tunein.php?i=a624.aac")!
-    
-    var liveStreamURL = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
-    private var avAudioSession:AVAudioSession = AVAudioSession.sharedInstance()
+    //private var avAudioSession:AVAudioSession = AVAudioSession.sharedInstance()
     var player : AVPlayer!
-    
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var bgImageView: UIImageView!
-    
+    @IBOutlet weak var nowPlayingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +33,26 @@ class PlayerViewController: UIViewController {
         startFirstTimePlayer()
     }
     
+    
+
+    
     func customizeNavigatonBar()
     {
         self.navigationItem.setHidesBackButton(true, animated:true)
+        
+        Timer.scheduledTimer(timeInterval: 12.0, target: self, selector: #selector(PlayerViewController.labelAnimation), userInfo: nil, repeats: true)
+        nowPlayingLabel.text = liveStationName + " Radio Live Streaming Online"
     }
+    
+    @objc func labelAnimation()
+    {
+        UIView.animate(withDuration: 10.0, delay: 0.0, options: UIView.AnimationOptions(rawValue: UIView.AnimationOptions.RawValue(0 << 1)), animations: {
+            self.nowPlayingLabel.frame = CGRect(x: -320, y: self.nowPlayingLabel.frame.origin.y, width: self.nowPlayingLabel.frame.width, height: self.nowPlayingLabel.frame.height)
+        }) { finished in
+            self.nowPlayingLabel.frame = CGRect(x: 320, y: self.nowPlayingLabel.frame.origin.y, width: self.nowPlayingLabel.frame.width, height: self.nowPlayingLabel.frame.height)
+        }
+    }
+
     
     func addSwipeGesture()
     {
@@ -57,18 +72,27 @@ class PlayerViewController: UIViewController {
     
     func startFirstTimePlayer()
     {
-        //let url = "http://listen.shoutcast.com/radiodeltalebanon"//99427180
-        //let audioPlayer:AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(string: url)!)//for playing local media
-        //let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
+        if self.playButton.isSelected != true//Play
+        {
+            player = AVPlayer(url: URL(string: liveStreamURL)!)
+            player.rate = 1.0
+            player.volume = 0.22
+            player.play()
+            print("player started..")
+            self.playButton.isSelected = !self.playButton.isSelected
+
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if player != nil {
+            player.pause()
+            player = nil
+            print("player closed.")
+            
+        }
         
-        
-        player = AVPlayer(url: URL(string: liveStreamURL)!)//for streaming from a remote server and local media
-        player.rate = 1.0
-        player.volume = 0.22
-        player.play()
-        
-        self.playButton.isSelected = !self.playButton.isSelected
-        print("player started..")
     }
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
@@ -77,37 +101,30 @@ class PlayerViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
     @IBAction func sliderValueChanged(_ sender: Any) {
         if player != nil {
-            //print("volume is", volumeSlider.value)
             player.volume = volumeSlider.value
         }
     }
     
     @IBAction func startOrstopPlayer(_ sender: Any) {
-        if self.playButton.isSelected != true {
-            if player != nil{
-                player.play()
-            }
-            else{
-                //let url = "http://listen.shoutcast.com/radiodeltalebanon"//99427180
-                //let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
+        
+        if self.playButton.isSelected != true//Play
+        {
                 player = AVPlayer(url: URL(string: liveStreamURL)!)
                 player.rate = 1.0
                 player.volume = 0.22
                 player.play()
                 print("player started..")
-            }
         }
-        else{
+        else //Stop
+        {
             if player != nil {
                 player.pause()
-                player = nil
+                print("player closed.")
+                
             }
+            
         }
         self.playButton.isSelected = !self.playButton.isSelected
     }
@@ -130,10 +147,10 @@ class PlayerViewController: UIViewController {
         commandCenter.pauseCommand.isEnabled = true
         commandCenter.pauseCommand.addTarget(self, action:  #selector(PlayerViewController.pauseAudio))
         
-        commandCenter.togglePlayPauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
-            //Update your button here for the play command
-            return .success
-        }
+//        commandCenter.togglePlayPauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+//            //Update your button here for the play command
+//            return .success
+//        }
         
         commandCenter.skipBackwardCommand.isEnabled = false
         commandCenter.skipForwardCommand.isEnabled = false
@@ -141,33 +158,21 @@ class PlayerViewController: UIViewController {
     
     @objc func playAudio()
     {
-        print("nextTrackCommandSelector")
-        
         if player != nil{
             player.play()
+            self.playButton.isSelected = !self.playButton.isSelected
         }
-        else{
-            //let url = "http://listen.shoutcast.com/radiodeltalebanon"//99427180
-            //let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
-            player = AVPlayer(url: URL(string: liveStreamURL)!)
-            player.rate = 1.0
-            player.volume = 0.22
-            player.play()
-            print("player started..")
-        }
-        self.playButton.isSelected = !self.playButton.isSelected
+        
+        
     }
     
     @objc func pauseAudio()
     {
-        print("nextTrackCommandSelector")
         if player != nil {
             player.pause()
-            player = nil
+            self.playButton.isSelected = !self.playButton.isSelected
         }
-        self.playButton.isSelected = !self.playButton.isSelected
+        
     }
 
- 
- 
 }

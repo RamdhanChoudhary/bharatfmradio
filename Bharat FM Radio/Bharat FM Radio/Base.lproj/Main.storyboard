@@ -99,19 +99,32 @@
                                     <action selector="sliderValueChanged:" destination="xRc-yW-4N0" eventType="valueChanged" id="QrS-G5-zEe"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q17-7l-Hed">
+                                <rect key="frame" x="0.0" y="678" width="414" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="kVH-ZZ-aY4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XiT-bQ-15q" firstAttribute="trailing" secondItem="WIh-RZ-wyN" secondAttribute="trailing" constant="20" id="5nm-0d-VC0"/>
                             <constraint firstItem="XiT-bQ-15q" firstAttribute="bottom" secondItem="zVZ-0L-tk4" secondAttribute="bottom" constant="19" id="Osk-Gl-iJi"/>
+                            <constraint firstItem="WIh-RZ-wyN" firstAttribute="top" secondItem="q17-7l-Hed" secondAttribute="bottom" constant="31" id="RMn-ht-w8k"/>
                             <constraint firstItem="zVZ-0L-tk4" firstAttribute="top" secondItem="WIh-RZ-wyN" secondAttribute="bottom" constant="30" id="W9n-ab-xyl"/>
+                            <constraint firstItem="q17-7l-Hed" firstAttribute="leading" secondItem="XiT-bQ-15q" secondAttribute="leading" id="Zd1-SD-kaP"/>
                             <constraint firstItem="WIh-RZ-wyN" firstAttribute="leading" secondItem="XiT-bQ-15q" secondAttribute="leading" constant="20" id="ceI-9K-4Je"/>
                             <constraint firstItem="zVZ-0L-tk4" firstAttribute="centerX" secondItem="0bA-mv-BnT" secondAttribute="centerX" constant="1" id="t3I-QH-LYN"/>
+                            <constraint firstItem="XiT-bQ-15q" firstAttribute="trailing" secondItem="q17-7l-Hed" secondAttribute="trailing" id="wE7-wW-mMZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XiT-bQ-15q"/>
                     </view>
                     <connections>
                         <outlet property="bgImageView" destination="Zx9-tY-rQ4" id="ow5-Bn-gqz"/>
+                        <outlet property="nowPlayingLabel" destination="q17-7l-Hed" id="CYs-Z3-4pW"/>
                         <outlet property="playButton" destination="zVZ-0L-tk4" id="bXo-h3-RYv"/>
                         <outlet property="volumeSlider" destination="WIh-RZ-wyN" id="s1l-1q-4eL"/>
                     </connections>
