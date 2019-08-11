@@ -62,10 +62,10 @@ class PlayerViewController: UIViewController {
     
     @objc func labelAnimation()
     {
-        UIView.animate(withDuration: 10.0, delay: 0.0, options: UIView.AnimationOptions(rawValue: UIView.AnimationOptions.RawValue(0 << 1)), animations: {
+        UIView.animate(withDuration: 12.0, delay: 0.0, options: UIView.AnimationOptions(rawValue: UIView.AnimationOptions.RawValue(0 << 10)), animations: {
             self.nowPlayingLabel.frame = CGRect(x: -320, y: self.nowPlayingLabel.frame.origin.y, width: self.nowPlayingLabel.frame.width, height: self.nowPlayingLabel.frame.height)
         }) { finished in
-            self.nowPlayingLabel.frame = CGRect(x: 340, y: self.nowPlayingLabel.frame.origin.y, width: self.nowPlayingLabel.frame.width, height: self.nowPlayingLabel.frame.height)
+            self.nowPlayingLabel.frame = CGRect(x: 320, y: self.nowPlayingLabel.frame.origin.y, width: self.nowPlayingLabel.frame.width, height: self.nowPlayingLabel.frame.height)
         }
     }
 
