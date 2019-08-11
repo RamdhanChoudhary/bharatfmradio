@@ -26,6 +26,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let bfrObj1 = ["Name": "Vividh Bharati", "URL": "http://vividhbharati-lh.akamaihd.net/i/vividhbharati_1@507811/master.m3u8"]
         let bfrObj2 = ["Name": "FM Gold Delhi", "URL": "http://airfmgold-lh.akamaihd.net/i/fmgold_1@507591/master.m3u8"]
         let bfrObj3 = ["Name": "FM Rainbow Delhi", "URL": "http://fmrainbow-lh.akamaihd.net/i/fmrainbow_1@507812/master.m3u8"]
+        
+        //Jaipur
+        let bfrObj101 = ["Name": "Radio Mirchi 98.3 FM", "URL": "http://peridot.streamguys.com:7150/Mirchi"]
+        let bfrObj102 = ["Name": "Radio City 91.1 FM", "URL": "http://prclive1.listenon.in:9960/"]
+        let bfrObj103 = ["Name": "Red 93.5 FM", "URL": "http://14013.live.streamtheworld.com/CKYRFM_SC"]
+        let bfrObj104 = ["Name": "BIG 92.7 FM", "URL": "http://sc-bb.1.fm:8017/"]
+        let bfrObj105 = ["Name": "Radio Selfie 90.8 FM", "URL": "https://streams.radio.co/s69032f19e/listen"]
+
+        
         let bfrObj4 = ["Name": "Raagam", "URL": "http://airraagam-lh.akamaihd.net/i/airraagam_1@507820/master.m3u8"]
         let bfrObj5 = ["Name": "AIR Gujarati", "URL": "http://airgujarati-lh.akamaihd.net/i/airgujarati_1@507814/master.m3u8"]
         let bfrObj6 = ["Name": "AIR Marathi", "URL": "http://airmarathi-lh.akamaihd.net/i/airmarathi_1@507815/master.m3u8"]
@@ -106,20 +115,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let bfrObj81 = ["Name": " AIR Thrissur", "URL": "http://airlsmp-lh.akamaihd.net/i/AIRLSMP031_1@855164/master.m3u8"]
         let bfrObj82 = ["Name": " AIR Satara", "URL": "http://airlsmp-lh.akamaihd.net/i/AIRLSMP030_1@855163/master.m3u8"]
         
-        //let bfrObj = ["Name": "", "URL": ""]
-
+        //let bfrObj19 = ["Name": "", "URL": ""]
+        //let bfrObj19 = ["Name": "", "URL": ""]
+        //let bfrObj19 = ["Name": "", "URL": ""]
+        //let bfrObj19 = ["Name": "", "URL": ""]
+        //let bfrObj19 = ["Name": "", "URL": ""]
+        //let bfrObj19 = ["Name": "", "URL": ""]
+        //let bfrObj19 = ["Name": "", "URL": ""]
+        //let bfrObj19 = ["Name": "", "URL": ""]
         
-        
-//        let bfrObj19 = ["Name": "", "URL": ""]
-//        let bfrObj45 = ["Name": "Radio City Hindi", "URL": "http://prclive1.listenon.in:9960/"]
+        let bfrObj83 = ["Name": "Radio Punjabi Virsa", "URL": "http://node-13.zeno.fm/25h82wv629duv?rj-ttl=5&rj-token=AAABbH9yGXzSqOSeg6AN-pZ--oR0fjYM5qDKHxsqurjP2Eq5K9EEgA"]
+        let bfrObj84 = ["Name": "Radio Retro Bollywood", "URL": "http://64.71.79.181:5124/stream?1505228937567.mp3"]
+        let bfrObj85 = ["Name": "Radio Bolly FM", "URL": "http://stream.radiobollyfm.in:8201/hd"]
 
-
-        
-//        let bfrObj2 = ["Name": "Radio Punjabi Virsa", "URL": "http://node-13.zeno.fm/25h82wv629duv?rj-ttl=5&rj-token=AAABbH9yGXzSqOSeg6AN-pZ--oR0fjYM5qDKHxsqurjP2Eq5K9EEgA"]
-//        let bfrObj3 = ["Name": "Radio Retro Bollywood", "URL": "http://64.71.79.181:5124/stream?1505228937567.mp3"]
-//        let bfrObj4 = ["Name": "Radio Bolly FM", "URL": "http://stream.radiobollyfm.in:8201/hd"]
-
-        fmListArry = [bfrObj0,bfrObj1, bfrObj2,bfrObj3,bfrObj4, bfrObj5, bfrObj6, bfrObj7, bfrObj8, bfrObj9, bfrObj10, bfrObj11, bfrObj12,bfrObj13,bfrObj14, bfrObj15,bfrObj16, bfrObj17,bfrObj18,bfrObj19,bfrObj20,bfrObj21,bfrObj22,bfrObj23,bfrObj24, bfrObj25,bfrObj26,bfrObj27,bfrObj28,bfrObj29, bfrObj30,bfrObj31,bfrObj32, bfrObj33, bfrObj34, bfrObj35, bfrObj36, bfrObj37, bfrObj38, bfrObj39, bfrObj40,bfrObj41,bfrObj41, bfrObj42,bfrObj43, bfrObj44,bfrObj45,bfrObj46,bfrObj47,bfrObj48,bfrObj49,bfrObj50,bfrObj51, bfrObj52,bfrObj53,bfrObj54,bfrObj55,bfrObj56, bfrObj57,bfrObj58,bfrObj59, bfrObj60, bfrObj61, bfrObj62, bfrObj63, bfrObj64, bfrObj65, bfrObj66, bfrObj67,bfrObj68,bfrObj69, bfrObj70,bfrObj71, bfrObj72,bfrObj73,bfrObj74,bfrObj75,bfrObj76,bfrObj77,bfrObj78,bfrObj79, bfrObj80,bfrObj81,bfrObj82  ]
+        fmListArry = [bfrObj0,bfrObj1, bfrObj2,bfrObj3,
+                      
+                      bfrObj101, bfrObj102, bfrObj103, bfrObj104, bfrObj105,
+                      
+                      bfrObj4, bfrObj5, bfrObj6, bfrObj7, bfrObj8, bfrObj9, bfrObj10, bfrObj11, bfrObj12,bfrObj13,bfrObj14, bfrObj15,bfrObj16, bfrObj17,bfrObj18,bfrObj19,bfrObj20,bfrObj21,bfrObj22,bfrObj23,bfrObj24, bfrObj25,bfrObj26,bfrObj27,bfrObj28,bfrObj29, bfrObj30,bfrObj31,bfrObj32, bfrObj33, bfrObj34, bfrObj35, bfrObj36, bfrObj37, bfrObj38, bfrObj39, bfrObj40,bfrObj41,bfrObj41, bfrObj42,bfrObj43, bfrObj44,bfrObj45,bfrObj46,bfrObj47,bfrObj48,bfrObj49,bfrObj50,bfrObj51, bfrObj52,bfrObj53,bfrObj54,bfrObj55,bfrObj56, bfrObj57,bfrObj58,bfrObj59, bfrObj60, bfrObj61, bfrObj62, bfrObj63, bfrObj64, bfrObj65, bfrObj66, bfrObj67,bfrObj68,bfrObj69, bfrObj70,bfrObj71, bfrObj72,bfrObj73,bfrObj74,bfrObj75,bfrObj76,bfrObj77,bfrObj78,bfrObj79, bfrObj80,bfrObj81,bfrObj82,bfrObj83, bfrObj84,bfrObj85  ]
         
 
     }
@@ -143,7 +156,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
