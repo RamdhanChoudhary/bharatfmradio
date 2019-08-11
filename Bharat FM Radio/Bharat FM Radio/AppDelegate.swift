@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 
 //Jai Bajrang Bali
@@ -21,7 +22,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        crateAudioSession()
         return true
+    }
+    
+    func crateAudioSession()
+    {
+        do {
+            //try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: [.mixWithOthers, .allowAirPlay])
+            
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+            print("AVAudioSession Category Playback OK")
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

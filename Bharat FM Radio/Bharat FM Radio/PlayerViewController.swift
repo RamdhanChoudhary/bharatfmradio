@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 class PlayerViewController: UIViewController {
 
@@ -22,65 +23,62 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        crateAudioSession()
-        
+        customizeNavigatonBar()
+        addSwipeGesture()
+        addGiffyImage()
+        customizeRemoteControls()
+        startFirstTimePlayer()
+    }
+    
+    func customizeNavigatonBar()
+    {
         self.navigationItem.setHidesBackButton(true, animated:true)
-
-        
+    }
+    
+    func addSwipeGesture()
+    {
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(PlayerViewController.handleSwipe))
+        gesture.direction = .right
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+    func addGiffyImage()
+    {
         let jeremyGif = UIImage.gifImageWithName("audio_animation_circle")
         let imageView = UIImageView(image: jeremyGif)
         imageView.frame = CGRect(x: 0, y: 100, width: self.view.frame.size.width, height: 210)
         view.addSubview(imageView)
-        
-        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(PlayerViewController.handleSwipe))
-        gesture.direction = .right
-        self.view.addGestureRecognizer(gesture)
-        
-        startFirstTimePlayer()
     }
+    
     
     func startFirstTimePlayer()
     {
         //let url = "http://listen.shoutcast.com/radiodeltalebanon"//99427180
+        //let audioPlayer:AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(string: url)!)//for playing local media
+
         let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
-        player = AVPlayer(url: URL(string: url)!)
+        player = AVPlayer(url: URL(string: url)!)//for streaming from a remote server and local media
         player.rate = 1.0
         player.volume = 0.22
         player.play()
+        
         self.playButton.isSelected = !self.playButton.isSelected
         print("player started..")
     }
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
-        print("swipe direction is",sender.direction)
-        if let navController = self.navigationController
-        {
+        if let navController = self.navigationController{
             navController.popViewController(animated: true)
         }
     }
     
-    func crateAudioSession()
-    {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            print("AVAudioSession Category Playback OK")
-            do {
-                try AVAudioSession.sharedInstance().setActive(true)
-                print("AVAudioSession is Active")
-                
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-    }
+    
     
     
     
     @IBAction func sliderValueChanged(_ sender: Any) {
         if player != nil {
-            print("volume is", volumeSlider.value)
+            //print("volume is", volumeSlider.value)
             player.volume = volumeSlider.value
         }
     }
@@ -108,4 +106,63 @@ class PlayerViewController: UIViewController {
         }
         self.playButton.isSelected = !self.playButton.isSelected
     }
+    
+    
+// ======== respond to remote controls
+    func customizeRemoteControls()
+    {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        //        commandCenter.previousTrackCommand.enabled = true;
+        //        commandCenter.previousTrackCommand.addTarget(self, action: "previousTrack")
+        //
+        //        commandCenter.nextTrackCommand.enabled = true
+        //        commandCenter.nextTrackCommand.addTarget(self, action: "nextTrack")
+        
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget(self, action:  #selector(PlayerViewController.playAudio))
+        
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget(self, action:  #selector(PlayerViewController.pauseAudio))
+        
+        commandCenter.togglePlayPauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            //Update your button here for the play command
+            return .success
+        }
+        
+        commandCenter.skipBackwardCommand.isEnabled = false
+        commandCenter.skipForwardCommand.isEnabled = false
+    }
+    
+    @objc func playAudio()
+    {
+        print("nextTrackCommandSelector")
+        
+        if player != nil{
+            player.play()
+        }
+        else{
+            //let url = "http://listen.shoutcast.com/radiodeltalebanon"//99427180
+            let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
+            player = AVPlayer(url: URL(string: url)!)
+            player.rate = 1.0
+            player.volume = 0.22
+            player.play()
+            print("player started..")
+        }
+        self.playButton.isSelected = !self.playButton.isSelected
+    }
+    
+    @objc func pauseAudio()
+    {
+        print("nextTrackCommandSelector")
+        if player != nil {
+            player.pause()
+            player = nil
+        }
+        self.playButton.isSelected = !self.playButton.isSelected
+    }
+
+ 
+ 
 }
