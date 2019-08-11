@@ -13,6 +13,8 @@ import MediaPlayer
 class PlayerViewController: UIViewController {
 
     //let urlFile = URL(string:"http://player.absoluteradio.co.uk/tunein.php?i=a624.aac")!
+    
+    var liveStreamURL = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
     private var avAudioSession:AVAudioSession = AVAudioSession.sharedInstance()
     var player : AVPlayer!
     
@@ -23,6 +25,8 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("liveStreamURL: ", liveStreamURL)
+        
         customizeNavigatonBar()
         addSwipeGesture()
         addGiffyImage()
@@ -55,9 +59,10 @@ class PlayerViewController: UIViewController {
     {
         //let url = "http://listen.shoutcast.com/radiodeltalebanon"//99427180
         //let audioPlayer:AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(string: url)!)//for playing local media
-
-        let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
-        player = AVPlayer(url: URL(string: url)!)//for streaming from a remote server and local media
+        //let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
+        
+        
+        player = AVPlayer(url: URL(string: liveStreamURL)!)//for streaming from a remote server and local media
         player.rate = 1.0
         player.volume = 0.22
         player.play()
@@ -90,8 +95,8 @@ class PlayerViewController: UIViewController {
             }
             else{
                 //let url = "http://listen.shoutcast.com/radiodeltalebanon"//99427180
-                let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
-                player = AVPlayer(url: URL(string: url)!)
+                //let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
+                player = AVPlayer(url: URL(string: liveStreamURL)!)
                 player.rate = 1.0
                 player.volume = 0.22
                 player.play()
@@ -143,8 +148,8 @@ class PlayerViewController: UIViewController {
         }
         else{
             //let url = "http://listen.shoutcast.com/radiodeltalebanon"//99427180
-            let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
-            player = AVPlayer(url: URL(string: url)!)
+            //let url = "http://yp.shoutcast.com/sbin/tunein-station.m3u?id=1795332"
+            player = AVPlayer(url: URL(string: liveStreamURL)!)
             player.rate = 1.0
             player.volume = 0.22
             player.play()
