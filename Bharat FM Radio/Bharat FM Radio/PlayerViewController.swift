@@ -86,7 +86,10 @@ class PlayerViewController: UIViewController {
         {
             player = AVPlayer(url: URL(string: liveStreamURL)!)
             player.rate = 1.0
-            player.volume = 0.22
+            
+            let vol = AVAudioSession.sharedInstance().outputVolume
+            player.volume = vol
+            volumeSlider.value = vol
             player.play()
             print("player started..")
             self.playButton.isSelected = !self.playButton.isSelected
@@ -107,6 +110,9 @@ class PlayerViewController: UIViewController {
     @IBAction func sliderValueChanged(_ sender: Any) {
         if player != nil {
             player.volume = volumeSlider.value
+            
+            //Update system volume
+            MPVolumeView.setVolume(volumeSlider.value)
         }
     }
     
@@ -123,7 +129,10 @@ class PlayerViewController: UIViewController {
             
             player = AVPlayer(url: URL(string: liveStreamURL)!)
             player.rate = 1.0
-            player.volume = 0.22
+            
+            let vol = AVAudioSession.sharedInstance().outputVolume
+            player.volume = vol
+            volumeSlider.value = vol
             player.play()
             print("player started..")
         }
@@ -185,4 +194,16 @@ class PlayerViewController: UIViewController {
         
     }
 
+}
+
+//Update system volume
+extension MPVolumeView {
+    static func setVolume(_ volume: Float) {
+        let volumeView = MPVolumeView()
+        let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            slider?.value = volume
+        }
+    }
 }
