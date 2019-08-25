@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600C606D23130BBE001AA49A /* FMListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600C606B23130BBE001AA49A /* FMListViewCell.swift */; };
+		600C606E23130BBE001AA49A /* FMListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600C606C23130BBE001AA49A /* FMListViewCell.xib */; };
 		602E5BB122FED96B00648B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E5BB022FED96B00648B80 /* AppDelegate.swift */; };
 		602E5BB322FED96B00648B80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E5BB222FED96B00648B80 /* ViewController.swift */; };
 		602E5BB622FED96B00648B80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602E5BB422FED96B00648B80 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		241C1CFF18C0EE9A182446A2 /* Pods-Bharat FM Radio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bharat FM Radio.release.xcconfig"; path = "Target Support Files/Pods-Bharat FM Radio/Pods-Bharat FM Radio.release.xcconfig"; sourceTree = "<group>"; };
+		600C606B23130BBE001AA49A /* FMListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMListViewCell.swift; sourceTree = "<group>"; };
+		600C606C23130BBE001AA49A /* FMListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMListViewCell.xib; sourceTree = "<group>"; };
 		602E5BAD22FED96B00648B80 /* Bharat FM Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bharat FM Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		602E5BB022FED96B00648B80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		602E5BB222FED96B00648B80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			children = (
 				602E5BB022FED96B00648B80 /* AppDelegate.swift */,
 				602E5BB222FED96B00648B80 /* ViewController.swift */,
+				600C606B23130BBE001AA49A /* FMListViewCell.swift */,
+				600C606C23130BBE001AA49A /* FMListViewCell.xib */,
 				60AF322522FEF213000DB452 /* PlayerViewController.swift */,
 				60AF322722FF28BE000DB452 /* Reachability.swift */,
 				60AF322B22FF4D4E000DB452 /* iOSDevCenters+GIF.swift */,
@@ -175,6 +181,7 @@
 				602E5BBE22FED97400648B80 /* LaunchScreen.storyboard in Resources */,
 				602E5BBB22FED97400648B80 /* Assets.xcassets in Resources */,
 				602E5BB622FED96B00648B80 /* Main.storyboard in Resources */,
+				600C606E23130BBE001AA49A /* FMListViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				602E5BB922FED96B00648B80 /* Bharat_FM_Radio.xcdatamodeld in Sources */,
+				600C606D23130BBE001AA49A /* FMListViewCell.swift in Sources */,
 				60AF322C22FF4D4E000DB452 /* iOSDevCenters+GIF.swift in Sources */,
 				60AF322622FEF213000DB452 /* PlayerViewController.swift in Sources */,
 				602E5BB322FED96B00648B80 /* ViewController.swift in Sources */,

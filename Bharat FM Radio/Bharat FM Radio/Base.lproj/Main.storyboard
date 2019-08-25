@@ -15,41 +15,30 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bharat_FM_Radio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgaround_black_apple" translatesAutoresizingMaskIntoConstraints="NO" id="Ter-05-0m6">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ter-05-0m6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Jh-vA-DyI">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FMListCell" rowHeight="200" id="buk-Y3-zFE">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="buk-Y3-zFE" id="cCd-rp-CwM">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="199.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="XPV-HA-d4E"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7fX-b2-qkV"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5Jh-vA-DyI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Frp-7K-MoE"/>
+                            <constraint firstItem="5Jh-vA-DyI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Frp-7K-MoE"/>
                             <constraint firstItem="Ter-05-0m6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GTS-mV-hZe"/>
                             <constraint firstItem="Ter-05-0m6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="H8e-sZ-CPM"/>
                             <constraint firstAttribute="bottom" secondItem="Ter-05-0m6" secondAttribute="bottom" id="JfG-GQ-UTF"/>
                             <constraint firstItem="5Jh-vA-DyI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k0p-ua-gj8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Jh-vA-DyI" secondAttribute="trailing" constant="20" id="l5F-Ue-pXw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Jh-vA-DyI" secondAttribute="trailing" id="l5F-Ue-pXw"/>
                             <constraint firstItem="Ter-05-0m6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nxc-Gs-eI0"/>
                             <constraint firstItem="5Jh-vA-DyI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vsM-uy-Mhr"/>
                         </constraints>
@@ -70,18 +59,18 @@
             <objects>
                 <viewController storyboardIdentifier="PlayerViewController" id="xRc-yW-4N0" customClass="PlayerViewController" customModule="Bharat_FM_Radio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0bA-mv-BnT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zx9-tY-rQ4">
-                                <rect key="frame" x="0.0" y="427" width="414" height="478"/>
+                                <rect key="frame" x="0.0" y="339" width="414" height="478"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="478" id="qnf-Wz-j2h"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVZ-0L-tk4">
-                                <rect key="frame" x="182" y="835" width="50" height="50"/>
+                                <rect key="frame" x="182" y="747" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="EDu-oc-CDv"/>
                                     <constraint firstAttribute="height" constant="50" id="aue-mz-Md2"/>
@@ -93,7 +82,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q17-7l-Hed">
-                                <rect key="frame" x="6" y="741" width="401" height="25"/>
+                                <rect key="frame" x="6" y="653" width="401" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="5Cn-uF-KoB"/>
                                 </constraints>
@@ -102,7 +91,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O07-wt-WKy">
-                                <rect key="frame" x="322" y="843" width="22" height="32"/>
+                                <rect key="frame" x="322" y="755" width="22" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Lh9-xS-x1K"/>
                                     <constraint firstAttribute="width" constant="22" id="tOJ-ae-66u"/>
@@ -110,7 +99,7 @@
                                 <state key="normal" image="next_forward"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q85-Nm-per">
-                                <rect key="frame" x="72" y="843" width="22" height="32"/>
+                                <rect key="frame" x="72" y="755" width="22" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="DEy-vX-UNm"/>
                                     <constraint firstAttribute="width" constant="22" id="ECV-LP-jqc"/>
@@ -118,7 +107,7 @@
                                 <state key="normal" image="left_backword"/>
                             </button>
                             <slider opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WIh-RZ-wyN">
-                                <rect key="frame" x="8" y="789" width="399" height="30"/>
+                                <rect key="frame" x="8" y="701" width="399" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="7b5-DX-yzm"/>
                                 </constraints>
@@ -165,9 +154,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9LP-dc-5aH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qfe-mz-BXO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="qfe-mz-BXO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -180,7 +173,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backgaround_black_apple" width="473" height="1024"/>
         <image name="left_backword" width="32" height="51"/>
         <image name="next_forward" width="32" height="51"/>
         <image name="play_icon2" width="50" height="50"/>
