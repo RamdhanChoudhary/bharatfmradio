@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Jh-vA-DyI">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="646"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -30,17 +30,39 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7fX-b2-qkV"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54v-i9-BwB">
+                                <rect key="frame" x="0.0" y="646" width="414" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Player Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4i-sW-KIM">
+                                        <rect key="frame" x="26" y="35" width="339" height="62"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40577923259999998" green="0.81218274109999999" blue="0.57765977270000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Y4i-sW-KIM" secondAttribute="trailing" constant="49" id="3YI-uR-oij"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y4i-sW-KIM" secondAttribute="bottom" constant="31" id="9xh-Y9-286"/>
+                                    <constraint firstItem="Y4i-sW-KIM" firstAttribute="leading" secondItem="54v-i9-BwB" secondAttribute="leading" constant="26" id="BcL-Qb-ssu"/>
+                                    <constraint firstItem="Y4i-sW-KIM" firstAttribute="top" secondItem="54v-i9-BwB" secondAttribute="top" constant="35" id="LOl-Vc-w2q"/>
+                                    <constraint firstAttribute="height" constant="128" id="mw4-CA-MnO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5Jh-vA-DyI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Frp-7K-MoE"/>
+                            <constraint firstItem="5Jh-vA-DyI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6RS-VX-46s"/>
                             <constraint firstItem="Ter-05-0m6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GTS-mV-hZe"/>
                             <constraint firstItem="Ter-05-0m6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="H8e-sZ-CPM"/>
                             <constraint firstAttribute="bottom" secondItem="Ter-05-0m6" secondAttribute="bottom" id="JfG-GQ-UTF"/>
-                            <constraint firstItem="5Jh-vA-DyI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k0p-ua-gj8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Jh-vA-DyI" secondAttribute="trailing" id="l5F-Ue-pXw"/>
+                            <constraint firstItem="54v-i9-BwB" firstAttribute="top" secondItem="5Jh-vA-DyI" secondAttribute="bottom" id="SZA-jB-VVr"/>
+                            <constraint firstItem="5Jh-vA-DyI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TJH-kS-jQU"/>
+                            <constraint firstItem="5Jh-vA-DyI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hlg-GS-THE"/>
+                            <constraint firstItem="54v-i9-BwB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hsn-MT-R1H"/>
                             <constraint firstItem="Ter-05-0m6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nxc-Gs-eI0"/>
-                            <constraint firstItem="5Jh-vA-DyI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vsM-uy-Mhr"/>
+                            <constraint firstItem="54v-i9-BwB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tv7-Lv-M1O"/>
+                            <constraint firstItem="54v-i9-BwB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yIq-eX-Tlq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
